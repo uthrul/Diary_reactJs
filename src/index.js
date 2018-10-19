@@ -18,18 +18,27 @@ const store = createStore(rootReducer ,composeWithDevTools(applyMiddleware(thunk
 const Header = () => (
     <nav className = "navbar navbar-default">
         <div className="container-fluid">
-            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
-                <span className="icon-bar"/>
-                <span className="icon-bar"/>
-                <span className="icon-bar"/>
-            </button>
+            <div className="navbar-header">
+                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span className="icon-bar"/>
+                    <span className="icon-bar"/>
+                    <span className="icon-bar"/>
+                </button>
 
-            <Link className="navbar-brand" to="/">
-                DIARYHOOD2018
-            </Link>
+                <Link className="navbar-brand" to="/">
+                    DIARYHOOD2018
+                </Link>
+            </div>
+
+            <div className="collapse navbar-collapse" id="myNavbar">
+                <ul className="nav navbar-nav navbar-right">
+                    <li><Link to="/login"> LOGIN </Link></li>
+                </ul>
+            </div>
+
         </div>
     </nav>
-)
+);
 
 // provide the store to react
 ReactDOM.render(
